@@ -12,11 +12,13 @@ Narzędzie porządkuje opisy przegród budowlanych w strukturze **materiał → 
 - Eksport do Markdown z niezależnymi opcjami dołączania U i λ oraz eksport bazy do Excel.
 - Automatyczny zapis, historia zmian i walidacja danych.
 
-## Agent AI do edycji bazy
+## Agent AI i integracja z DeepInfra
 
-Agent przyjmuje polecenia w języku naturalnym i tworzy plan zmian w materiałach oraz warstwach — również dla całej bazy jednocześnie. Potrafi m.in. dodawać i aktualizować obiekty oraz wykonywać globalne zamiany tekstu. Aplikacja sprawdza spójność planu, pokazuje podgląd i stosuje zmiany dopiero po zatwierdzeniu przez użytkownika. W razie potrzeby można je cofnąć z historii.
+Agent przyjmuje polecenie w języku naturalnym i przesyła przez **DeepInfra API** kontekst projektu do wybranego modelu. Może pracować na całej bazie lub ograniczyć kontekst do wskazanej stacji, budynku albo kodu warstwy; obsługuje też dołączone dokumenty referencyjne Markdown.
 
-Integracja z DeepInfra API
+**Przebieg:** polecenie → plan operacji JSON z modelu → lokalna walidacja identyfikatorów i spójności danych → podgląd zmian → zatwierdzenie przez użytkownika → zapis z możliwością cofnięcia.
+
+Plan może obejmować dodawanie i aktualizację materiałów oraz warstw, a także globalne zamiany tekstu w bazie. Odpowiedź jest odbierana strumieniowo; interfejs pokazuje zużycie tokenów i koszt zapytania. Klucz API jest przechowywany poza repozytorium.
 
 ## Przykład eksportu Markdown
 
@@ -30,6 +32,7 @@ Integracja z DeepInfra API
 **Technologie:** Python 3.10+, Tkinter, JSON, XLSX, Markdown; opcjonalnie DeepInfra API.
 
 Repozytorium prezentuje projekt w portfolio. Kod aplikacji i dane projektowe nie są publikowane.
+
 
 
 
