@@ -16,6 +16,8 @@ Narzędzie porządkuje opisy przegród budowlanych w strukturze **materiał → 
 
 Agent przyjmuje polecenia w języku naturalnym i tworzy plan zmian w materiałach oraz warstwach — również dla całej bazy jednocześnie. Potrafi m.in. dodawać i aktualizować obiekty oraz wykonywać globalne zamiany tekstu. Aplikacja sprawdza spójność planu, pokazuje podgląd i stosuje zmiany dopiero po zatwierdzeniu przez użytkownika. W razie potrzeby można je cofnąć z historii.
 
+Integracja z DeepInfra API
+
 ## Przykład eksportu Markdown
 
 ```md
